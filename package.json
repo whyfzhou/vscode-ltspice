@@ -8,10 +8,10 @@
   "homepage": "",
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/whyfzhou/vscode-ltspice"
   },
   "bugs": {
-    "url": ""
+    "url": "https://github.com/whyfzhou/vscode-ltspice/issues"
   },
   "license": "MIT",
   "engines": {
