@@ -1,0 +1,73 @@
+{
+  "fileTypes": ["ckt", "sp", "net", "cir", "sub", "lib"],
+  "name": "ltspice",
+  "scopeName": "source.ltspice",
+  "patterns": [
+    {
+      "name": "comment.line.character.ltspice",
+      "match": "^[ \\t]*\\*.*"
+    },
+    {
+      "name": "comment.line.character.ltspice",
+      "match": "^[ \\t]*//.*"
+    },
+    {
+      "name": "comment.line.character.ltspice",
+      "begin": ";",
+      "end": "$"
+    },
+    {
+      "name": "string.quoted.single.ltspice",
+      "begin": "'",
+      "end": "'"
+    },
+    {
+      "name": "string.quoted.double.ltspice",
+      "begin": "\"",
+      "end": "\""
+    },
+    {
+      "name": "constant.language.gnd.ltspice",
+      "match": "(?<=(^|\\s)[A-Za-z](\\w*\\s)+)\\b0\\b(?=\\s|$)",
+      "comment": "Matches the global reference node '0'"
+    },
+    {
+      "name": "keyword.operator.ltspice",
+      "match": "(\\*\\*|<=|>=|<|>|==|=|&|\\||\\^|\\*|/|\\+|-|!)"
+    },
+    {
+      "name": "constant.numeric.ltspice",
+      "match": "\\b[+-]?(?:\\d+\\.?\\d*|\\.\\d+)(?:[eE][+-]?\\d+)?(?i:T|G|Meg|M|k|m|u|n|p|f)?\\b"
+    },
+    {
+      "name": "entity.name.function.ltspice",
+      "match": "^[\\s]*(?i:a|c|d|j|k|l|m|n|o|q|r|s|t|u|w|x|z|@|&)[a-zA-Z0-9_@<:>]+"
+    },
+    {
+      "name": "storage.type.ltspice",
+      "match": "^[\\s]*(?i:b|e|f|g|h|i|v)[a-zA-Z0-9_@<:>]+"
+    },
+    {
+      "name": "keyword.control.ltspice",
+      "match": "^[\\s]*(\\.(?i:ac|backanno|dc|end|four|fra|func|global|ic|inc|include|keepnode|lib|loadbias|loadstate|meas|measure|model|net|nodeset|noise|op|options|param|save|savebias|savestate|step|temp|tf|tran|wave|state|rule|output))\\b"
+    },
+    {
+      "name": "keyword.operator.expression.ltspice",
+      "match": "(?i:\\b(i|v|sin|cos|tan|sinh|cosh|tanh|asin|arcsin|acos|arccos|atan|arctan|atan2|asinh|acosh|atanh|hypot|exp|ln|log|log10|pow|pwr|pwrs|sqrt|abs|sgn|ddt|idt|idtmod|rand|random|white|buf|inv|ceil|floor|round|int|max|dnlim|min|uplim|if|limit|table|absdelay|delay|u|uramp|smallsig)\\b)"
+    },
+    {
+      "name": "string.quoted.single.ltspice",
+      "match": "^[ \\t]*\\+"
+    }
+  ],
+  "repository": {
+    "subcircuit": {
+      "name": "entity.name.type.ltspice",
+      "match": "^[\\s]*(?i:subckt|ends)\\s+([\\w]+)"
+    },
+    "arbitrarystatemachine": {
+      "name": "entity.name.type.ltspice",
+      "match": "^[\\s]*(?i:machine|endmach|endmachine)\\s+([\\w]+)"
+    }
+  }
+}

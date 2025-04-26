@@ -1,0 +1,66 @@
+{
+  "name": "vscode-ltspice",
+  "displayName": "LTspice for VSCode",
+  "description": "LTspice language support",
+  "version": "0.2.0",
+  "icon": "icon.jpg",
+  "publisher": "whyfz399",
+  "homepage": "",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "bugs": {
+    "url": ""
+  },
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.15.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "keywords": [
+    "ltspice",
+    "syntax",
+    "highlighting",
+    "circuit",
+    "snippets"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "ltspice",
+        "aliases": [
+          "LTspice"
+        ],
+        "extensions": [
+          ".ckt",
+          ".sp",
+          ".net",
+          ".cir",
+          ".sub",
+          ".lib"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "ltspice",
+        "scopeName": "source.ltspice",
+        "path": "./syntaxes/ltspice.tmLanguage.json"
+      }
+    ],
+    "snippets": [
+      {
+        "language": "ltspice",
+        "path": "./snippets/snippets.json"
+      },
+      {
+        "language": "ltspice",
+        "path": "./snippets/snippets_meas.json"
+      }
+    ]
+  }
+}

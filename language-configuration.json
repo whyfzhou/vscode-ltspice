@@ -1,0 +1,37 @@
+{
+    "comments": {
+        "lineComment": ["*", ";"]
+    },
+    // symbols used as brackets
+    "brackets": [
+        ["{", "}"],
+        ["[", "]"],
+        ["(", ")"],
+        [".subckt", ".ends"],
+        [".machine", ".endmach"],
+        [".machine", ".endmachine"],
+        [".lib", ".endl"]
+    ],
+    // symbols that are auto closed when typing
+    "autoClosingPairs": [
+        ["{", "}"],
+        ["[", "]"],
+        ["(", ")"],
+        ["\"", "\""],
+        ["'", "'"],
+        [".subckt", ".ends"],
+        [".machine", ".endmach"],
+        [".lib", ".endl"]
+    ],
+    // symbols that that can be used to surround a selection
+    "surroundingPairs": [
+        ["{", "}"],
+        ["[", "]"],
+        ["(", ")"],
+        ["\"", "\""],
+        ["'", "'"],
+        [".subckt", ".ends"],
+        [".machine", ".endmach"],
+        [".lib", ".endl"]
+    ]
+}

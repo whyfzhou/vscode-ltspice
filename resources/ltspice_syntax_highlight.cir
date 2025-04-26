@@ -1,0 +1,12 @@
+.machine
+    .state off 0
+    .state on 1
+
+    .rule off on v(turn_on)
+    .rule * off v(stop)
+
+    .output (debug) state
+    .output (drv) state == on  ; 1mA driving to node `drv`
+.endm
+
+Rm00 debug 0 1k
