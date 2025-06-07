@@ -13,7 +13,7 @@
         "body": [
             ".machine",
             "${1:* Statemachine Body}",
-            ".endm"
+            ".endmachine"
         ],
         "description": "LTspice Arbitrary state machine"
     },
