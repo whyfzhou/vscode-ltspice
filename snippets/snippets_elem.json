@@ -1,0 +1,74 @@
+{
+  "ADeviceAndGate": {
+    "prefix": "and",
+    "body": ["A{$1:name} {$2:in1} {$3:in2} {$4:in3} {$5:in4} {$6:in5} {$7:NAND output} {$8:AND output} 0 AND"],
+    "description": "A-device: AND gate"
+  },
+  "ADeviceOrGate": {
+    "prefix": "or",
+    "body": ["A{$1:name} {$2:in1} {$3:in2} {$4:in3} {$5:in4} {$6:in5} {$7:NOR output} {$8:OR output} 0 OR"],
+    "description": "A-device: OR gate"
+  },
+  "ADeviceXorGate": {
+    "prefix": "xor",
+    "body": ["A{$1:name} {$2:in1} {$3:in2} {$4:in3} {$5:in4} {$6:in5} {$7:XNOR output} {$8:XOR output} 0 XOR"],
+    "description": "A-device: XOR gate"
+  },
+  "ADeviceBufferInverter": {
+    "prefix": ["buf", "inv"],
+    "body": ["A{$1:name} {$2:input} 0 0 0 0 {$3:INV output} {$4:BUF output} 0 BUF"],
+    "description": "A-device: Buffer/Inverter"
+  },
+  "ADeviceSchmitt": {
+    "prefix": ["schmitt", "comparator", "cmp"],
+    "body": [
+      "A{$1:name} {$2:in+} {$3:in-} 0 0 0 {$4:inverted output} {$5:output} 0 SCHMITT Vt={$6:threshold} Vh={$7:hysteresis}"
+    ],
+    "description": "A-device: Buffer/Inverter"
+  },
+  "ADeviceDFlop": {
+    "prefix": ["dff", "dflop"],
+    "body": ["A{$1:name} {$2:d} 0 {$3:clk} {$4:pre} {$5:clr} {$6:qbar} {$7:q} 0 DFLOP"],
+    "description": "A-device: D flip-flop"
+  },
+  "ADeviceSRFlop": {
+    "prefix": ["srff", "srflop"],
+    "body": ["A{$1:name} {$2:s} {$3:r} 0 0 0 {$4:qbar} {$5:q} 0 SRFLOP"],
+    "description": "A-device: SR flip-flop"
+  },
+  "ADeviceCounter": {
+    "prefix": "counter",
+    "body": ["A{$1:name} {$2:clk} 0 0 0 0 {$3:ph2} {$4:phi1} 0 COUNTER"],
+    "description": "A-device: Counter"
+  },
+  "ADeviceModulator": {
+    "prefix": "modulator",
+    "body": ["A{$1:name} {$2:fm} {$3:am} 0 0 0 {$4:cos} {$5:q/sin} 0 MODULATOR"],
+    "description": "A-device: Modulator"
+  },
+  "ADeviceVaristor": {
+    "prefix": "varistor",
+    "body": ["A{$1:name} {$2:in+} {$3:in-} 0 0 0 0 {$4:clamped} 0 VARISTOR Rclamp={$5:breakdown impedance}"],
+    "description": "A-device: Varistor"
+  },
+  "ADevicePhiDet": {
+    "prefix": ["phidet", "phasedet"],
+    "body": [
+      "A{$1:name} {$2:in1} {$3:in2} 0 0 0 0 {$4:output} 0 PHASEDET Iout={$5:Iout} Vlow={$6:Vlow} Vhigh={$7:Vhigh} Ref=0"
+    ],
+    "description": "A-device: PhiDet (Phase Detector)"
+  },
+  "ADeviceSampleHold": {
+    "prefix": ["sample", "samplehold", "s/h"],
+    "body": ["A{$1:name} {$2:in+} {$3:in-} {$4:|clk 0,0 sh|} 0 0 {$5:output} 0 SAMPLEHOLD"],
+    "description": "A-device: SampleHold"
+  },
+  "ADeviceOTA": {
+    "prefix": "ota",
+    "body": [
+      "A{$1:name} {$2:in-} {$3:in+} 0 0 0 0 {$4:output, where Iout = G * (Ref + (in+) - (in-))} 0 OTA",
+      "Ref={$5:ref} G={$6:gm} Iout={$7:max output current} Vlow={$8:Vlow} Vhigh={$9:Vhigh} PowerUp={$10:power up signal}"
+    ],
+    "description": "A-device: OTA"
+  }
+}
