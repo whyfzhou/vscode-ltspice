@@ -2,7 +2,7 @@
   "name": "vscode-ltspice",
   "displayName": "LTspice for VSCode",
   "description": "LTspice language support",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "icon": "icon.jpg",
   "publisher": "whyfz399",
   "homepage": "",
@@ -59,7 +59,19 @@
       },
       {
         "language": "ltspice",
+        "path": "./snippets/snippets_elem.json"
+      },
+      {
+        "language": "ltspice",
         "path": "./snippets/snippets_meas.json"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "editor.action.commentLine",
+        "key": "ctrl+/",
+        "mac": "cmd+/",
+        "when": "editorTextFocus && editorLangId == 'ltspice'"
       }
     ]
   }
